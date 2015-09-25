@@ -20,6 +20,8 @@
     _PromtLabel.text = @"Please Enter Your Details";
     UITapGestureRecognizer *tapViewGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnView)];
     [self.view addGestureRecognizer:tapViewGR];
+//    [_UserName setReturnKeyType:UIReturnKeyDone];
+//    [_Password setReturnKeyType:UIReturnKeyDone];
 
 }
 
@@ -37,10 +39,13 @@
     {
        _PromtLabel.text =  @"login Sucess";
          [self performSegueWithIdentifier:@"ChatList" sender:self];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDelegate initSinchClient:_UserName.text];
     }
    
-
 }
+
+
 - (IBAction)SignUp:(id)sender {
    
     NSLog(@"%@ %@",_UserName.text,_Password.text);
@@ -70,10 +75,16 @@
 }
 
 // Tab the view to dismiss keyboard
+
 - (void)didTapOnView {
     [self.UserName resignFirstResponder];
     [self.Password resignFirstResponder];
 }
 
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end

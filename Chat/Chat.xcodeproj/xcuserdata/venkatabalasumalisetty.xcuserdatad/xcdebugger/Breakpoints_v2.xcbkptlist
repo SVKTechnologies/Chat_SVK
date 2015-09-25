@@ -6,80 +6,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chat/LoginScene.m"
-            timestampString = "461911957.319236"
+            filePath = "Chat/AppDelegate.m"
+            timestampString = "464798048.10775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-Login:"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-messageSent:recipientId:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chat/LoginScene.m"
-            timestampString = "461911957.319236"
+            filePath = "Chat/AppDelegate.m"
+            timestampString = "464798048.10775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-Login:"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-messageFailed:info:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chat/LoginScene.m"
-            timestampString = "461911957.319236"
+            filePath = "Chat/AppDelegate.m"
+            timestampString = "464798171.619303"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "-Login:"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-messageClient:didReceiveIncomingMessage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chat/LoginScene.m"
-            timestampString = "461911957.319236"
+            filePath = "Chat/AppDelegate.m"
+            timestampString = "464798172.534364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-Login:"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-messageClient:didReceiveIncomingMessage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FriendsList.m"
-            timestampString = "461912625.394365"
+            filePath = "Chat/AppDelegate.m"
+            timestampString = "464798432.261445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-prepareForSegue:sender:"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-messageClient:didReceiveIncomingMessage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

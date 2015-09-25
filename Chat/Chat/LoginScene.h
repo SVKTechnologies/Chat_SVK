@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface LoginScene : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *UserName;

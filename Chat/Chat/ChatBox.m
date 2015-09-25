@@ -16,8 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _MessageArray = [[NSMutableArray alloc]init];
     NSLog(@"%@",_ChatMateId);
-  self.navigationItem.title = _ChatMateId;
+    self.navigationItem.title = _ChatMateId;
+    [self sendMessage:_ChatMateId];
+   // [self retrieveMessagesFromParseWithChatMateID:self.ChatMateId];
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -58,6 +63,53 @@
     
     return cell;
 }
+
+- (void)retrieveMessagesFromParseWithChatMateID:(NSString *)chatMateId {
+    NSArray *userNames = @[self.MyId, chatMateId];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
+    [query whereKey:@"senderId" containedIn:userNames];
+    [query whereKey:@"recipientId" containedIn:userNames];
+    [query orderByAscending:@"timestamp"];
+    
+    __weak typeof(self) weakSelf = self;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *chatMessageArray, NSError *error) {
+        if (!error) {
+            // Store all retrieve messages into messageArray
+            for (int i = 0; i < [chatMessageArray count]; i++) {
+                ChatMessage *chatMessage = [[ChatMessage alloc] init];
+                
+                [chatMessage setMessageId:chatMessageArray[i][@"messageId"]];
+                [chatMessage setSenderId:chatMessageArray[i][@"senderId"]];
+                [chatMessage setRecipientIds:[NSArray arrayWithObject:chatMessageArray[i][@"recipientId"]]];
+                [chatMessage setText:chatMessageArray[i][@"text"]];
+                [chatMessage setTimestamp:chatMessageArray[i][@"timestamp"]];
+                
+                [weakSelf.MessageArray addObject:chatMessage];
+            }
+            [weakSelf.Chat_Box reloadData];  // Refresh the table view
+           // [weakSelf.Chat_Box scrollIndicatorInsets];  // Scroll to the bottom of the table view
+        } else {
+            NSLog(@"Error: %@", error.description);
+        }
+    }];
+}
+
+
+-(void)sendMessage:(id)sender
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate sendTextMessage:@"Hello" toRecipient:self.ChatMateId];
+}
+
+
+
+
+
+
+
+
+
 
 
 /*

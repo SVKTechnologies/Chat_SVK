@@ -58,32 +58,22 @@
     for(PFObject *description in List)
     {
         PFUser *user = [description objectForKey:@"username"];
-        
         NSLog(@"%@",user);
-      
-        
         [_chatMatesArray addObject:user];
-   
     }
     
     NSLog(@"%@",_chatMatesArray[4]);
-
-
-
 }
 
     
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
   
-    
-        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-        
+    NSIndexPath *path = [self.tableView indexPathForSelectedRow];
     ChatBox *VC = [segue destinationViewController];
-        VC.ChatMateId = _chatMatesArray[path.row];
-    
+    VC.ChatMateId = _chatMatesArray[path.row];
+    VC.MyId = self.MyId;
     
 }
-    
     
 
 
